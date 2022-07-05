@@ -1,0 +1,12 @@
+{% extends "hospitalapp/padre-index.html" %}
+{% load static %} 
+{% block contenidoPagina %}
+<body>
+    <h1> Pacientes </h1> 
+    {% for paciente in paciente %}
+                   
+    <li>{{paciente.nombre}}
+        {{paciente.apellido}}
+        {{paciente.edad}} </li>
+{% endfor %}
+{% endblock %} 

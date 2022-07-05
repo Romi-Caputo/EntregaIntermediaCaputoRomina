@@ -1,0 +1,12 @@
+{% extends "hospitalapp/padre-index.html" %}
+{% load static %} 
+{% block contenidoPagina %}
+<body>
+    <h1> Residencias </h1> 
+    {% for residencia in residencia %}
+                   
+    <li>{{residencia.especialidad}}
+        {{residencia.comision}}
+        {{residencia.horario}} </li>
+{% endfor %}
+{% endblock %} 
