@@ -1,12 +1,20 @@
-{% extends "hospitalapp/padre-index.html" %}
+{% extends 'hospitalapp/padre-index.html' %}
 {% load static %} 
-{% block contenidoPagina %}
-<body>
+
+{% block tituloPagina %} 
+Ingresar Paciente
+{% endblock %}
+
+{% block contenidoPagina%}
+
+<div style="background-color: rgb(213, 192, 240);">
+
     <h1> Pacientes </h1> 
     {% for paciente in paciente %}
                    
-    <li>{{paciente.nombre}}
-        {{paciente.apellido}}
-        {{paciente.edad}} </li>
-{% endfor %}
-{% endblock %} 
+    <li>La paciente <b> {{paciente.apellido}} {{paciente.nombre}} </b>tiene <b>{{paciente.edad}} años</b></li>
+    
+    {% endfor %}
+{% endblock %}
+
+</div>

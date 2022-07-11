@@ -1,17 +1,20 @@
-from unittest.util import _MAX_LENGTH
 from django import forms
 
-class Nuevopaciente(forms.Form):
-    nombre= forms.CharField(max_length=30)
-    apellido= forms.CharField(max_length=30, )
-    edad= forms.IntegerField()
 
-class Nuevodoctor(forms.Form):
-    nombre= forms.CharField(max_length=30)
-    apellido= forms.CharField(max_length=30)
-    especialidad= forms.CharField(max_length=30)
+from django import forms
 
-class Nuevaresidencia(forms.Form):
-    especialidad= forms.CharField(max_length=30)
-    comision= forms.IntegerField( )
-    horario= forms.IntegerField()
+
+class pacientesformulario(forms.Form):
+    nombre=forms.CharField(max_length=20)
+    apellido=forms.CharField(max_length=20)
+    edad=forms.IntegerField(min_value=0)
+
+class doctoresformulario(forms.Form):
+    nombre=forms.CharField(max_length=20)
+    apellido=forms.CharField(max_length=20)
+    especialidad=forms.CharField(max_length=20)
+
+class residenciasformulario(forms.Form):
+    especialidad=forms.CharField(max_length=20)
+    comision=forms.IntegerField()
+    horario=forms.IntegerField()

@@ -2,13 +2,16 @@
 
 
 {% block contenidoPagina %}
+<div style="background-color: rgb(221, 210, 173);">
 <body>
     <h1> Doctores </h1>  
+    
     {% for doctor in doctor %}
-                   
-    <li>{{doctor.nombre}}
-        {{doctor.apellido}}
-        {{doctor.especialidad}} </li>
+
+    <li> El Doctor <b>{{doctor.apellido}} {{doctor.nombre}}</b> se especializa en <b>{{doctor.especialidad}}</b></li> 
              </body>
-{% endfor %}
+    {% endfor %}
 {% endblock %} 
+
+</body>
+</div>

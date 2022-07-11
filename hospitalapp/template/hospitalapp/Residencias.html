@@ -1,12 +1,14 @@
 {% extends "hospitalapp/padre-index.html" %}
 {% load static %} 
 {% block contenidoPagina %}
+<div style="background-color: rgb(136, 177, 224);">
 <body>
     <h1> Residencias </h1> 
     {% for residencia in residencia %}
                    
-    <li>{{residencia.especialidad}}
-        {{residencia.comision}}
-        {{residencia.horario}} </li>
-{% endfor %}
+    <li> La especialidad <b>{{residencia.especialidad}}</b> cuya comisión es la número <b>{{residencia.comision}}</b> se cursa a las <b>{{residencia.horario}} hs</b> </li>
+    {% endfor %}
 {% endblock %} 
+
+</body>
+</div>

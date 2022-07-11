@@ -1,0 +1,30 @@
+{% extends 'hospitalapp/padre-index.html' %}
+{% load static %}
+
+{% block tituloPagina %}
+Buscar Pacientes
+{% endblock %}
+
+{% block contenidoPagina %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        
+        <input type="text" name="paciente" id="" min="0">
+
+        <input type="submit" value="Buscar Paciente">
+    </form>
+</p>
+
+<p>Resultados: </p>
+<ul>
+    {% for resultado in paciente %}
+        <li>{{resultado.nombre}} 
+            {{ resultado.apellido }}
+            {{ resultado.edad }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
