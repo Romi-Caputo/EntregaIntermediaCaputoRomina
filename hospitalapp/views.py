@@ -92,18 +92,18 @@ def crear_residencia(request):
 def buscar_pacientes(request):
     if request.method == "POST":
 
-        info_paciente = request.POST["apellido"]
+        info_paciente = request.POST["apellido"] #NOMBRE DE LA CAJA DE TEXTO DEL FORMULARIOOO!!!!
         
-        paciente = Paciente.objects.filter(apellido__icontains=info_paciente)
+        pacientes = Paciente.objects.filter(apellido__icontains=info_paciente)
         
 
-        return render(request,"hospitalapp/buscar_pacientes.html",{"paciente":paciente})
+        return render(request,"hospitalapp/buscar_pacientes.html",{"pacientes":pacientes})
 
     else: # get y otros
 
-        paciente =  []  
+        pacientes =  []  
         
-        return render(request,"hospitalapp/buscar_pacientes.html",{"paciente":paciente})
+        return render(request,"hospitalapp/buscar_pacientes.html",{"pacientes":pacientes})
 
 
     

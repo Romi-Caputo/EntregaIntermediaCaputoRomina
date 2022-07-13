@@ -2,29 +2,37 @@
 {% load static %}
 
 {% block tituloPagina %}
-Buscar Pacientes
+Buscar Paciente
 {% endblock %}
 
 {% block contenidoPagina %}
+<div class="row gx-5 justify-content-center">
+    <div class="col-lg-6">
+        <p><h3>Ingrese el apellido del paciente que desea buscar:</h3>
 
-    <form action="" method="post">
-        {% csrf_token %}
+             <form action="" method="post">
+             {% csrf_token %}
 
-        
-        <input type="text" name="paciente" id="" min="0">
+                <input type="text" name="apellido" id="" min="0">
 
-        <input type="submit" value="Buscar Paciente">
-    </form>
-</p>
+                 <input type="submit" value="Buscar Paciente">
+            </form>
+        </p>
 
-<p>Resultados: </p>
-<ul>
-    {% for resultado in paciente %}
-        <li>{{resultado.nombre}} 
-            {{ resultado.apellido }}
-            {{ resultado.edad }}
-        </li>
-    {% endfor %}
-</ul>
+    
+        <h5 style="color: rgb(153, 153, 153) ">Resultados: </h5>
+        <ul class="list-group list-group">
 
+            {% for paciente in pacientes %}
+             <li class="list-group-item d-flex justify-content-between align-items-start">
+            <b> Apellido:</b><p>{{paciente.apellido}} </p>
+            <b> Nombre: </b><p>{{paciente.nombre}} </p> 
+            <b> Edad:</b><p>{{paciente.edad}}</p> 
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<br>
+<br>
 {% endblock %}
